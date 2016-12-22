@@ -1,0 +1,7 @@
+.nav-stacked a {
+    color: #fff;
+}
+
+.nav-stacked a:hover {
+    color: #000000;
+}

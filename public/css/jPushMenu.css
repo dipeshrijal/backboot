@@ -1,0 +1,114 @@
+/* General styles for all menus */
+.cbp-spmenu {
+    position: fixed;
+}
+
+/* Orientation-dependent styles for the content of the menu */
+.cbp-spmenu-vertical {
+    width: 18%;
+    height: 100%;
+    top: 50px;
+    z-index: 1000;
+    overflow-y: scroll;
+}
+.cbp-spmenu-horizontal {
+    width: 100%;
+    height: 150px;
+    left: 0;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+/* Vertical menu that slides from the left or right */
+.cbp-spmenu-left {
+    left: -18%;
+}
+
+.cbp-spmenu-right {
+    right: -18%;
+}
+
+.cbp-spmenu-left.menu-open {
+    left: 0;
+}
+
+.cbp-spmenu-right.menu-open {
+    right: 0;
+}
+
+/* Horizontal menu that slides from the top or bottom */
+
+.cbp-spmenu-top {
+    top: -150px;
+}
+
+.cbp-spmenu-bottom {
+    bottom: -150px;
+}
+
+.cbp-spmenu-top.menu-open {
+    top: 0;
+}
+
+.cbp-spmenu-bottom.menu-open {
+    bottom: 0;
+}
+
+/* Push classes applied to the body */
+.push-body {
+    overflow-x: hidden;
+    position: relative;
+    left: 0;
+}
+
+.push-body-toright {
+    left: 18%;
+}
+
+.push-body-toleft {
+    left: -18%;
+}
+
+/* Transitions */
+.cbp-spmenu,
+.push-body {
+    -webkit-transition: all 0.3s ease;
+       -moz-transition: all 0.3s ease;
+            transition: all 0.3s ease;
+}
+
+/* Example media queries */
+@media screen and (max-width: 55.1875em) {
+    .cbp-spmenu-horizontal {
+        font-size: 75%;
+        height: 110px;
+    }
+
+    .cbp-spmenu-top {
+        top: -110px;
+    }
+
+    .cbp-spmenu-bottom {
+        bottom: -110px;
+    }
+}
+
+@media screen and (max-height: 26.375em) {
+    .cbp-spmenu-vertical {
+        font-size: 90%;
+        width: 18%;
+    }
+
+    .cbp-spmenu-left,
+    .push-body-toleft {
+        left: -18%;
+    }
+
+    .cbp-spmenu-right {
+        right: -18%;
+    }
+
+    .push-body-toright {
+        left: 18%;
+    }
+}

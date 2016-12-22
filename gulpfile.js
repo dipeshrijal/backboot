@@ -40,7 +40,8 @@ gulp.task('fonts', function () {
 gulp.task('copy', function () {
     return gulp.src([
         config.nodePath + '/jquery/dist/jquery.min.js',
-        config.bootstrapDir + '/assets/javascripts/bootstrap.min.js'
+        config.bootstrapDir + '/assets/javascripts/bootstrap.min.js',
+        config.nodePath + '/jquery-slimscroll/jquery.slimscroll.js'
     ])
         .pipe(concat('app.js'))
         .pipe(uglify())
@@ -48,10 +49,11 @@ gulp.task('copy', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./assets/scss/*.scss', ['sass']);
+    gulp.watch('assets/scss/*.scss', ['sass']);
     gulp.watch('*.html', browserSync.reload);
     gulp.watch('**/*.html', browserSync.reload);
-    gulp.watch('./assets/**/*.js', browserSync.reload);
+    gulp.watch('assets/**/*.js', browserSync.reload);
+    gulp.watch('public/css/**/*.css', browserSync.reload);
 });
 
 // Configure the browserSync task
